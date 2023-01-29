@@ -16,8 +16,9 @@ if (isset($_FILES['file']) && $_FILES['file']['size'] > 0) {
     $point_end = move_uploaded_file($file['tmp_name'], $pasta . $nome_file . '.' . $extensao);
     $point_url = $pasta . $nome_file . '.' . $extensao;
     if ($point_end) {
-        echo 'Deu certo ';
-        $conexao -> query("INSERT INTO arquivos (path , data_upload, usuario) VALUES ('$point_url','".date('d/m/y')."','Geremias')");
+        $conexao->query("INSERT INTO arquivos (path , data_upload, usuario) VALUES ('$point_url','" . date('d/m/y') . "','Geremias')");
+        header('Location: ./index.php?upload=ok');
+        exit;
     } else {
         header('Location: ./');
         exit;
