@@ -7,6 +7,10 @@
     <title>Upload de arquivos PHP</title>
 </head>
 <body>
-    <h1>Hello, word!</h1>
+    <form action="./upload.php" enctype="multipart/form-data" method="post">
+        <label for="file">Selecione arquivo</label>
+        <input type="file" name="file" id="file"><br>
+        <button type="submit">Enviar arquivo</button>
+    </form>
 </body>
 </html>
